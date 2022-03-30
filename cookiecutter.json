@@ -1,0 +1,13 @@
+{
+    "author_name": null,
+    "author_email": "{{cookiecutter.author_name|lower|replace(' ', '.')}}@afm.nl",
+    "project": null,
+    "package_name": "{{cookiecutter.project|lower|replace(' ', '-')}}",
+    "package_path": "{{cookiecutter.package_name|lower|replace('-', '_')}}",
+    "package_description": null,
+    "package_keywords": null,
+    "azure_project": null,
+    "azure_repo": "{{cookiecutter.package_name}}",
+    "azure_url": "https://afm-spot-on@dev.azure.com/afm-spot-on/{{cookiecutter.azure_project}}/_git/{{cookiecutter.azure_repo}}",
+    "python_version": 3.9
+}

@@ -1,0 +1,7 @@
+[BASIC]
+
+# Override variable name checks
+good-names=df, X, y
+
+# Disable messages
+disable=logging-fstring-interpolation
