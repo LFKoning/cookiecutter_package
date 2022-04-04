@@ -9,5 +9,8 @@
     "azure_project": null,
     "azure_repo": "{{cookiecutter.package_name}}",
     "azure_url": "https://afm-spot-on@dev.azure.com/afm-spot-on/{{cookiecutter.azure_project}}/_git/{{cookiecutter.azure_repo}}",
-    "python_version": 3.9
+    "python_version": 3.9,
+    "create_git": "yes",
+    "create_conda": "yes",
+    "precommit": "{{cookiecutter.create_conda}}"
 }
