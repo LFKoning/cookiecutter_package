@@ -39,7 +39,7 @@ steps:
 
 # Run unit tests and compute test coverage
 - script: |
-    python -m pytest --cov=src/ --cov-report=xml tests/
+    python -m pytest --doctest-modules --cov=src/ --cov-report=xml tests/
   displayName: 'Running tests with pytest'
   enabled: true
   continueOnError: false

@@ -1,2 +1,2 @@
-graft tests/data
+graft src/package_data
 global exclude *.py[cod]

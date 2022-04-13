@@ -50,9 +50,7 @@ setuptools.setup(
 
     package_dir={"": "src"},
     packages=setuptools.find_packages("src"),
-    include_package_data=True,
     test_suite="tests",
-
-    # Add CLI commands here
-    entry_points={"console_scripts": []},
+    {% if cookiecutter.includes_data.startswith("y") %}include_package_data=True,{% endif %}
+    {% if cookiecutter.includes_cli.startswith("y") %}entry_points={"console_scripts": ["greeting = {{ cookiecutter.package_path }}.cli:main"]},{% endif %}
 )
