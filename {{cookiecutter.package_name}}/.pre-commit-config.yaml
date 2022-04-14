@@ -33,7 +33,7 @@ repos:
       stages: [commit]
       entry: python -m pylint
       types: [python]
-      files: (^src/|^tests/)
+      files: (^src/)
 
     # Clear output from Jupyter Notebooks
     - id: clear-jupyter-output

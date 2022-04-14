@@ -25,7 +25,7 @@ if not is_yes("{{ cookiecutter.includes_data }}"):
     shutil.rmtree("src/{{ cookiecutter.package_path }}/package_data")
 
 # Create git repo
-if is_yes("{{ cookiecutter.create_conda }}"):
+if is_yes("{{ cookiecutter.create_git }}"):
     print("Setting up the git repository.")
     os.system("git init")
 
