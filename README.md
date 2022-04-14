@@ -43,9 +43,11 @@ This will start cookicutter and ask you for the following inputs:
 |`azure_repo`|Name of the project's repository.|`test-project-py`|,
 |`azure_url`|URL to the project's repository|`https://...@dev.azure.com/.../Test/test_project-py`|,
 |`python_version`|The Python version you are using.|`3.9`|
-|`create_git`|Initialize a new git repository (yes/no).|`yes`|
-|`create_conda`|Create a new Anaconda environment (yes/no)|`yes`|
-|`precommit`|Install pre-commit hooks (yes/no).|`yes`|
+|`includes_cli`|Does your project need a Command Line Interface? (y/n).|`n`|
+|`includes_cli`|Does your project include data files? (y/n).|`n`|
+|`create_git`|Create a new git repository? (y/n).|`y`|
+|`create_conda`|Create a new Anaconda environment? (y/n)|`y`|
+|`precommit`|Install pre-commit hooks? (y/n).|`y`|
 
 If a default value is available, cookiecutter will display the default between square
 brackets (`[..]`). Simply press `Enter` to accept the default value and continue.
