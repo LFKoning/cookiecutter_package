@@ -34,7 +34,7 @@ This will start cookicutter and ask you for the following inputs:
 |---|---|---|
 |`author_name`|Your first and last name.|`Lukas Koning`|
 |`author_email`|Your e-mail address.|`lukas.koning@gmail.com`|
-|`project`|Title of your project.|`Test Project`|
+|`project`|Title for your project.|`Test Project`|
 |`package_name`|Name of your package.|`test-project`|
 |`package_path`|Path to your package.|`test_project`|
 |`package_description`|Short description for your package.|`Test cookiecutter template`|
@@ -44,7 +44,7 @@ This will start cookicutter and ask you for the following inputs:
 |`azure_url`|URL to the project's repository|`https://...@dev.azure.com/.../Test/test_project-py`|,
 |`python_version`|The Python version you are using.|`3.9`|
 |`includes_cli`|Does your project need a Command Line Interface? (y/n).|`n`|
-|`includes_cli`|Does your project include data files? (y/n).|`n`|
+|`includes_data`|Does your project include data files? (y/n).|`n`|
 |`create_git`|Create a new git repository? (y/n).|`y`|
 |`create_conda`|Create a new Anaconda environment? (y/n)|`y`|
 |`precommit`|Install pre-commit hooks? (y/n).|`y`|
