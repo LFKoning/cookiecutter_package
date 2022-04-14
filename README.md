@@ -93,4 +93,4 @@ documentation, feel free to e-mail the authors.
 
 ## Authors
 
-1. Lukas Koning (lukas.koning@gmail.com)
+1. Lukas Koning (lukas.koning@afm.nl)
