@@ -91,6 +91,8 @@ improvements and open a pull request!
 If you have suggestions or remarks not directly related to the project's code or
 documentation, feel free to e-mail the authors.
 
-## Authors
+## Maintainers
+
+This project is maintained by:
 
 1. Lukas Koning (lukas.koning@afm.nl)

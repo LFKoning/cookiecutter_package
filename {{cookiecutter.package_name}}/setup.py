@@ -48,9 +48,10 @@ setuptools.setup(
     extras_require=EXTRAS_REQUIRE,
     tests_require=TEST_REQUIREMENTS,
 
-    package_dir={"": "src"},
+    package_dir={"{{ cookiecutter.package_path }}": "src/{{ cookiecutter.package_path }}"},
     packages=setuptools.find_packages("src"),
     test_suite="tests",
-    {% if cookiecutter.includes_data.startswith("y") %}include_package_data=True,{% endif %}
+    {% if cookiecutter.includes_data.startswith("y") %}include_package_data=True,
+    package_data=["{{ cookiecutter.package_path }}", "package_data/*"],{% endif %}
     {% if cookiecutter.includes_cli.startswith("y") %}entry_points={"console_scripts": ["greeting = {{ cookiecutter.package_path }}.cli:main"]},{% endif %}
 )
