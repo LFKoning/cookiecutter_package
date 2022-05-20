@@ -7,10 +7,6 @@ pool:
   vmImage: 'ubuntu-latest'
 strategy:
   matrix:
-    Python37:
-      python.version: '3.7'
-    Python38:
-      python.version: '3.8'
     Python39:
       python.version: '3.9'
 
@@ -43,7 +39,7 @@ steps:
 
 # Run unit tests and compute test coverage
 - script: |
-    pytest --cov src/ --cov-report html tests/
+    python -m pytest --doctest-modules --cov=src/ --cov-report=xml tests/
   displayName: 'Running tests with pytest'
   enabled: true
   continueOnError: false

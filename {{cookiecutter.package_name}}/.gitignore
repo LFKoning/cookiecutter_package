@@ -63,5 +63,5 @@ env.bak/
 venv.bak/
 
 # VS Code settings
-# Note: To share settings with others, uncomment this line.
+# Note: Uncomment if you don't want to sync VS code settings
 # .vscode
