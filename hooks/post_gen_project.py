@@ -11,7 +11,6 @@ def is_yes(value):
         return True
     return False
 
-
 # Create git repo
 if is_yes("{{cookiecutter.create_conda}}"):
     print("Setting up the git repository.")

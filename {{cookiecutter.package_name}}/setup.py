@@ -1,7 +1,7 @@
 """Package Setup File"""
 import setuptools
 
-#TODO: Fill in dependecies here
+# TODO: Fill in dependecies here
 REQUIREMENTS = []
 
 # Requirements for running unit tests
@@ -9,8 +9,19 @@ TEST_REQUIREMENTS = ["pytest", "pytest-cov"]
 
 # Development requirements
 EXTRAS_REQUIRE = {
-    "dev": ["black", "pylint", "pre-commit"] + TEST_REQUIREMENTS,
+    "dev": [
+        "black",
+        "pylint",
+        "pre-commit",
+        "mkdocs",
+        "mkdocstrings",
+        "mkdocs-section-index",
+        "mkdocs-gen-files",
+        "mkdocs-literate-nav",
+    ]
+    + TEST_REQUIREMENTS,
 }
+
 
 def get_readme():
     """Returns contents of README.md."""
@@ -20,20 +31,18 @@ def get_readme():
     except OSError:
         return "Error: Cannot read from README.md!"
 
+
 setuptools.setup(
     # Author info
     author="{{cookiecutter.author_name}}",
     author_email="{{cookiecutter.author_email}}",
-
     # Package info
     name="{{cookiecutter.package_name}}",
     version="0.0.1",
-
     description="{{cookiecutter.package_description}}",
     long_description=get_readme(),
     keywords="{{cookiecutter.package_keywords}}",
     url="{{cookiecutter.azure_url}}",
-
     # See: https://pypi.org/classifiers/
     classifiers=[
         "Development Status :: 2 - Pre-Alpha",
@@ -42,16 +51,13 @@ setuptools.setup(
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: {{cookiecutter.python_version}}",
     ],
-
     # Dependency specifications
     install_requires=REQUIREMENTS,
     extras_require=EXTRAS_REQUIRE,
     tests_require=TEST_REQUIREMENTS,
-
     package_dir={"": "src"},
     packages=setuptools.find_packages("src"),
     test_suite="tests",
-
     # Add CLI commands here
     entry_points={"console_scripts": []},
 )

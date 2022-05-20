@@ -31,22 +31,22 @@ steps:
 - script: |
     python -m black src/
   displayName: 'Running autoformatter black'
-  enabled: "true"
-  continueOnError: "false"
+  enabled: true
+  continueOnError: false
 
 # Run linting on src
 - script: |
     python -m pylint src/
   displayName: 'Running linting with pylint'
-  enabled: "true"
-  continueOnError: "false"
+  enabled: true
+  continueOnError: false
 
 # Run unit tests and compute test coverage
 - script: |
     pytest --cov src/ --cov-report html tests/
   displayName: 'Running tests with pytest'
-  enabled: "true"
-  continueOnError: "false"
+  enabled: true
+  continueOnError: false
 
 # Format and publish coverage report
 - task: PublishCodeCoverageResults@1

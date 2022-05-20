@@ -1,0 +1,28 @@
+# Documentation website settings
+site_name: {{ cookiecutter.project }}
+site_url:
+
+# Navigation menu (left)
+nav:
+    - Home: index.md
+    - {{ cookiecutter.project }}: reference/
+    - About: about.md
+
+# Theme for the website
+theme: readthedocs
+
+# MkDocs plug-isn
+plugins:
+- search
+- section-index
+
+- gen-files:
+    scripts:
+    - docs/make_package_docs.py
+
+- literate-nav:
+    nav_file: SUMMARY.md
+
+- mkdocstrings:
+    watch:
+    - src/{{ cookiecutter.package_path }}
