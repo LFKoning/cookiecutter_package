@@ -1,3 +1,8 @@
+
+# VS Code settings
+# Note: Uncomment if you don't want to sync VS code settings
+# .vscode
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -61,7 +66,3 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-
-# VS Code settings
-# Note: Uncomment if you don't want to sync VS code settings
-# .vscode

@@ -9,6 +9,7 @@ def is_yes(value):
         return True
     return False
 
+
 print("\n\n")
 print("Post-processing cookiecutter template.")
 
@@ -36,19 +37,28 @@ if is_yes("{{ cookiecutter.create_git }}"):
 if is_yes("{{ cookiecutter.create_conda }}"):
     print("Creating Anaconda environment: {{ cookiecutter.package_name }}.")
     os.system(
-        "conda create --yes -n {{ cookiecutter.package_name }} "
+        "conda create --yes --quiet --name {{ cookiecutter.package_name }} "
         + "python={{ cookiecutter.python_version }}"
     )
 
     print("Installing development packages.")
     os.system(
         "conda activate {{ cookiecutter.package_name }} "
-        + "& python -m pip install black pylint pre-commit"
+        + "& conda install --yes --quiet black pylint"
     )
 
-    # Setup pre-commit
+    # Pre-commit setup
     if is_yes("{{ cookiecutter.precommit }}"):
+        # Install pre-commit and hooks
         print("Installing pre-commit hooks.")
+        os.system(
+            "conda activate {{ cookiecutter.package_name }} "
+            + "& python -m pip install pre-commit"
+        )
         os.system("conda activate {{ cookiecutter.package_name }} & pre-commit install")
+
+    else:
+        # Remove pre-commmit config
+        os.remove(".pre-commit-comfig.yaml")
 
 print("All done!")
