@@ -9,8 +9,6 @@ def is_yes(value):
         return True
     return False
 
-<<<<<<< HEAD
-=======
 print("\n\n")
 print("Post-processing cookiecutter template.")
 
@@ -26,7 +24,6 @@ if not is_yes("{{ cookiecutter.includes_data }}"):
     os.remove("src/{{ cookiecutter.package_path }}/read_data.py")
     shutil.rmtree("src/{{ cookiecutter.package_path }}/package_data")
 
->>>>>>> 1e2d52448464e22b0c49a8acf4e4a2407dbc80fa
 # Create git repo
 if is_yes("{{ cookiecutter.create_git }}"):
     print("Setting up the git repository.")
