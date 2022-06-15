@@ -33,15 +33,15 @@ This will start cookicutter and ask you for the following inputs:
 |Input|Description|Example|
 |---|---|---|
 |`author_name`|Your first and last name.|`Lukas Koning`|
-|`author_email`|Your e-mail address.|`lukas.koning@gmail.com`|
+|`author_email`|Your e-mail address.|`lukas.koning@afm.nl`|
 |`project`|Title for your project.|`Test Project`|
 |`package_name`|Name of your package.|`test-project`|
 |`package_path`|Path to your package.|`test_project`|
 |`package_description`|Short description for your package.|`Test cookiecutter template`|
 |`package_keywords`|Keywords for your package.|`cookiecutter, template, testing`|
-|`azure_project`|Project name in Azure DevOps.|`Test`|
-|`azure_repo`|Name of the project's repository.|`test-project-py`|,
-|`azure_url`|URL to the project's repository|`https://...@dev.azure.com/.../Test/test_project-py`|,
+|`azure_project`|Project name in Azure DevOps.|`TEST`|
+|`azure_repo`|Name of the project's repository.|`test-project`|,
+|`azure_url`|URL to the project's repository|`https://dev.azure.com/afm-spot-on/TEST/test_project`|,
 |`python_version`|The Python version you are using.|`3.9`|
 |`includes_cli`|Does your project need a Command Line Interface? (y/n).|`n`|
 |`includes_data`|Does your project include data files? (y/n).|`n`|
