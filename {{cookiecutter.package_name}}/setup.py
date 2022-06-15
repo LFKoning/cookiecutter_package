@@ -14,14 +14,16 @@ EXTRAS_REQUIRE = {
         "pylint",
         "pre-commit",
         "mkdocs",
-        "mkdocstrings",
-        "mkdocstrings-python",
-        "mkdocs-section-index",
+        "mkdocs-material",
         "mkdocs-gen-files",
         "mkdocs-literate-nav",
+        "mkdocs-section-index",
+        "mkdocstrings",
+        "mkdocstrings-python",
     ]
     + TEST_REQUIREMENTS,
 }
+
 
 def get_readme():
     """Returns contents of README.md."""
@@ -30,6 +32,7 @@ def get_readme():
             return readme_file.read()
     except OSError:
         return "Error: Cannot read from README.md!"
+
 
 setuptools.setup(
     # Author info
@@ -60,9 +63,9 @@ setuptools.setup(
     tests_require=TEST_REQUIREMENTS,
 
     packages=setuptools.find_packages("src"),
-    package_dir={"{{ cookiecutter.package_path }}": "src/{{ cookiecutter.package_path }}"},
-    test_suite="tests",
-    {% if cookiecutter.includes_data.startswith("y") %}include_package_data=True,
+    package_dir={"": "src"},
+    test_suite="tests",{% if cookiecutter.includes_cli.startswith("y") %}
+    entry_points={"console_scripts": ["greeting = {{ cookiecutter.package_path }}.cli:main"]},{% endif %}{% if cookiecutter.includes_data.startswith("y") %}
+    include_package_data=True,
     package_data={"{{ cookiecutter.package_path }}", ["{{ cookiecutter.package_path }}/package_data/*"]},{% endif %}
-    {% if cookiecutter.includes_cli.startswith("y") %}entry_points={"console_scripts": ["greeting = {{ cookiecutter.package_path }}.cli:main"]},{% endif %}
 )

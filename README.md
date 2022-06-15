@@ -8,7 +8,7 @@ To use this cookiecutter, you should have the cookiecutter package available on 
 system. To install cookiecutter into your current Python environment, type:
 
 ```shell
-python -m pip install cookicutter
+python -m pip install cookiecutter
 ```
 
 Or if you prefer Anaconda:

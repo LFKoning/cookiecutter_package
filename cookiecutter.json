@@ -8,7 +8,7 @@
     "package_keywords": null,
     "azure_project": null,
     "azure_repo": "{{ cookiecutter.package_name }}",
-    "azure_url": "https://afm-spot-on@dev.azure.com/afm-spot-on/{{ cookiecutter.azure_project }}/_git/{{ cookiecutter.azure_repo }}",
+    "azure_url": "https://dev.azure.com/afm-spot-on/{{ cookiecutter.azure_project }}/_git/{{ cookiecutter.azure_repo }}",
     "python_version": 3.9,
     "includes_cli": "n",
     "includes_data": "n",

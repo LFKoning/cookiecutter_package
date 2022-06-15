@@ -59,6 +59,6 @@ if is_yes("{{ cookiecutter.create_conda }}"):
 
     else:
         # Remove pre-commmit config
-        os.remove(".pre-commit-comfig.yaml")
+        os.remove(".pre-commit-config.yaml")
 
 print("All done!")

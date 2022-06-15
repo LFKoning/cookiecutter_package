@@ -26,7 +26,7 @@ user_input = {
     },
     "azure_url": {
         "value": "{{ cookiecutter.azure_url }}",
-        "pattern": r"^https://afm-spot-on@dev.azure.com/afm-spot-on/[a-zA-Z\-]+/_git/[a-z][a-z0-9\-_]+$",
+        "pattern": r"^https://dev.azure.com/afm-spot-on/[a-zA-Z\-]+/_git/[a-z][a-z0-9\-_]+$",
     },
 }
 
