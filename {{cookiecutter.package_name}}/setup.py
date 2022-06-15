@@ -9,7 +9,18 @@ TEST_REQUIREMENTS = ["pytest", "pytest-cov"]
 
 # Development requirements
 EXTRAS_REQUIRE = {
-    "dev": ["black", "pylint", "pre-commit"] + TEST_REQUIREMENTS,
+    "dev": [
+        "black",
+        "pylint",
+        "pre-commit",
+        "mkdocs",
+        "mkdocstrings",
+        "mkdocstrings-python",
+        "mkdocs-section-index",
+        "mkdocs-gen-files",
+        "mkdocs-literate-nav",
+    ]
+    + TEST_REQUIREMENTS,
 }
 
 def get_readme():
