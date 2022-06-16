@@ -11,7 +11,7 @@ site_name: {{ cookiecutter.project }}
 # Navigation menu (left-hand side)
 nav:
     - Home: index.md
-    - {{ cookiecutter.project }}: reference/
+    - Reference: reference/
     - About: about.md
 
 # Theme for the website
