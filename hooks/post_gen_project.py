@@ -44,7 +44,7 @@ if is_yes("{{ cookiecutter.create_conda }}"):
     print("Installing development packages.")
     os.system(
         "conda activate {{ cookiecutter.package_name }} "
-        + "& conda install --yes --quiet black pylint"
+        + "& conda install --yes --quiet isort black pylint"
     )
 
     # Pre-commit setup

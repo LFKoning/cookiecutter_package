@@ -10,6 +10,7 @@ TEST_REQUIREMENTS = ["pytest", "pytest-cov"]
 # Development requirements
 EXTRAS_REQUIRE = {
     "dev": [
+        "isort",
         "black",
         "pylint",
         "pre-commit",

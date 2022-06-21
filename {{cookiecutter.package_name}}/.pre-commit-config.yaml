@@ -14,10 +14,20 @@ repos:
     - id: check-merge-conflict
       name: Check merge conflicts
 
+  # Hooks using local packages
   - repo: local
     hooks:
 
-    # Auto-format with local black
+    # Sort imports in scripts
+    - id: isort
+      name: Sort import statements
+      stages: [commit]
+      language: system
+      entry: python -m isort
+      types: [python]
+      files: (^src/^tests)
+
+    # Auto-format with black
     - id: black
       name: Format code using black
       stages: [commit]
@@ -26,7 +36,7 @@ repos:
       types: [python]
       files: (^src/|^tests/)
 
-    # Lint with local pylint
+    # Lint with pylint
     - id: pylint
       name: Check code style using pylint
       language: system
@@ -34,11 +44,3 @@ repos:
       entry: python -m pylint
       types: [python]
       files: (^src/)
-
-    # Clear output from Jupyter Notebooks
-    - id: clear-jupyter-output
-      name: Clear output in Jupyter Notebooks
-      stages: [commit]
-      language: system
-      files: \.ipynb$
-      entry: jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace
