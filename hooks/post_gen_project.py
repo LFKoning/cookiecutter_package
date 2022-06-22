@@ -13,6 +13,9 @@ def is_yes(value):
 print("\n\n")
 print("Post-processing cookiecutter template.")
 
+# Copy README.md to docs/index.md
+shutil.copy("README.md", "docs/index.md")
+
 # Remove unnecessary CLI example files
 if not is_yes("{{ cookiecutter.includes_cli }}"):
     print("Cleaning up CLI example files.")
