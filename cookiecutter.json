@@ -9,7 +9,7 @@
     "azure_user": "{{ cookiecutter.author_name|lower|replace(' ', '_') }}",
     "azure_repo": "{{ cookiecutter.package_name }}",
     "azure_project": "{{ cookiecutter.package_name }}",
-    "azure_url": "https://{{ cookiecutter.azure_user }}@dev.azure.com/{{ cookiecutter.azure_user }}/{{ cookiecutter.azure_project }}/_git/{{ cookiecutter.azure_repo }}",
+    "azure_url": "https://{{ cookiecutter.azure_user }}@dev.azure.com/{{ cookiecutter.azure_user }}/{{ cookiecutter.azure_project|urlencode }}/_git/{{ cookiecutter.azure_repo }}",
     "python_version": 3.9,
     "includes_cli": "n",
     "includes_data": "n",
