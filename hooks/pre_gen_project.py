@@ -16,8 +16,8 @@ user_input = {
         "value": "{{ cookiecutter.package_path }}",
         "pattern": r"^[a-z][a-z0-9_]+$",
     },
-    "azure_project": {
-        "value": "{{ cookiecutter.azure_project }}",
+    "azure_user": {
+        "value": "{{ cookiecutter.azure_user }}",
         "pattern": r"^[a-zA-Z\-_]+$",
     },
     "azure_repo": {
@@ -26,7 +26,7 @@ user_input = {
     },
     "azure_url": {
         "value": "{{ cookiecutter.azure_url }}",
-        "pattern": r"^https://dev.azure.com/afm-spot-on/[a-zA-Z\-_]+/_git/[a-z][a-z0-9\-_]+$",
+        "pattern": r"^https://[a-zA-Z\-_]+@dev.azure.com/[a-zA-Z\-_]+/[a-z][a-z0-9\-_]+/_git/[a-z][a-z0-9\-_]+$",
     },
 }
 

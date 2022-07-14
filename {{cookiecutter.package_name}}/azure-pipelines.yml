@@ -19,9 +19,20 @@ steps:
 # Install all development dependencies
 - script: |
     python -m pip install --upgrade pip
-    python -m pip install --upgrade black pylint pytest pytest-cov pytest-azurepipelines
-    python -m pip install .
-  displayName: 'Installing validata package'
+    python -m pip install --upgrade black isort pylint pytest pytest-cov pytest-azurepipelines
+  displayName: 'Installing development dependencies'
+
+# Install the project package
+- script: |
+    python -m pip install -e .
+  displayName: 'Installing project package'
+
+# Run isort on src
+- script: |
+    python -m isort src/
+  displayName: 'Sorting imports with isort'
+  enabled: true
+  continueOnError: false
 
 # Run auto-formatter on src
 - script: |
@@ -39,7 +50,7 @@ steps:
 
 # Run unit tests and compute test coverage
 - script: |
-    python -m pytest --doctest-modules --cov=src/ --cov-report=xml tests/
+    python -m pytest --ignore=docs/ --cov=src/ --cov-report=xml tests/
   displayName: 'Running tests with pytest'
   enabled: true
   continueOnError: false
