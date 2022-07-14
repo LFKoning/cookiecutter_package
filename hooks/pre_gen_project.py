@@ -22,11 +22,15 @@ user_input = {
     },
     "azure_repo": {
         "value": "{{ cookiecutter.azure_repo }}",
-        "pattern": r"^[a-z][a-z0-9\-_]+$",
+        "pattern": r"^[a-zA-Z][a-zA-Z0-9\-_]+$",
+    },
+    "azure_project": {
+        "value": "{{ cookiecutter.azure_project }}",
+        "pattern": r"^[^_.][^:/\\~&%;@'\"?<>|#$*}{,+=[\]]+[^.]$",
     },
     "azure_url": {
         "value": "{{ cookiecutter.azure_url }}",
-        "pattern": r"^https://[a-zA-Z\-_]+@dev.azure.com/[a-zA-Z\-_]+/[a-z][a-z0-9\-_]+/_git/[a-z][a-z0-9\-_]+$",
+        "pattern": r"^https://[a-zA-Z\-_]+@dev.azure.com/[a-zA-Z\-_]+/[a-zA-Z][a-zA-Z0-9\-_]+/_git/[a-zA-Z][a-zA-Z0-9\-_]+$",
     },
 }
 
