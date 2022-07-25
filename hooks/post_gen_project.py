@@ -31,7 +31,7 @@ if not is_yes("{{ cookiecutter.includes_data }}"):
 # Create git repo
 if is_yes("{{ cookiecutter.create_git }}"):
     print("Setting up the git repository.")
-    os.system("git init")
+    os.system("git init -b main")
 
     print("Adding remote: {{ cookiecutter.azure_url }}.")
     os.system("git remote add origin {{ cookiecutter.azure_url }}")
