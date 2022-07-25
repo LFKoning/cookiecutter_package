@@ -2,15 +2,24 @@ repos:
 
   # Some default pre-commit hooks
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.1.0
+    rev: v4.3.0
     hooks:
 
+    # Makes sure all line endings are the same
+    - id: mixed-line-ending
+      name: Check and fix mixed line breaks
+
+    # Remove trailing spaces from lines
+    # Note: Leaves hard line-breaks in markdown intact
+    - id: trailing-whitespace
+      name: Check and fix trailing whitespace
+      args: [--markdown-linebreak-ext=md]
+
+    # Check YAML validity
     - id: check-yaml
       name: Check YAML formatting
 
-    - id: mixed-line-ending
-      name: Check line endings
-
+    # Check unresolved merge conflicts
     - id: check-merge-conflict
       name: Check merge conflicts
 
