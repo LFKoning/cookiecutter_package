@@ -39,9 +39,10 @@ This will start cookicutter and ask you for the following inputs:
 |`package_path`|Path to your package.|`test_project`|
 |`package_description`|Short description for your package.|`Test cookiecutter template`|
 |`package_keywords`|Keywords for your package.|`cookiecutter, template, testing`|
+|`azure_user`|Your username in Azure DevOps.|`lukas_koning`|
 |`azure_project`|Project name in Azure DevOps.|`TEST`|
 |`azure_repo`|Name of the project's repository.|`test-project`|
-|`azure_url`|URL to the project's repository|`https://lukas_koning@dev.azure.com/lukas_koning/test_project/_git/test_project`|
+|`azure_url`|URL to the project's repository|`https://lukas_koning@dev.azure.com/lukas_koning/TEST/_git/test_project`|
 |`python_version`|The Python version you are using.|`3.9`|
 |`includes_cli`|Does your project need a Command Line Interface? (y/n).|`n`|
 |`includes_data`|Does your project include data files? (y/n).|`n`|
