@@ -44,21 +44,25 @@ if is_yes("{{ cookiecutter.create_conda }}"):
         + "python={{ cookiecutter.python_version }}"
     )
 
-    print("Installing development packages.")
+    print("Installing package with development dependencies.")
     os.system(
         "conda activate {{ cookiecutter.package_name }} "
-        + "& conda install --yes --quiet isort black pylint"
+        + "& python -m pip install -e .[dev]"
     )
 
     # Pre-commit setup
     if is_yes("{{ cookiecutter.precommit }}"):
-        # Install pre-commit and hooks
-        print("Installing pre-commit hooks.")
-        os.system(
-            "conda activate {{ cookiecutter.package_name }} "
-            + "& python -m pip install pre-commit"
-        )
-        os.system("conda activate {{ cookiecutter.package_name }} & pre-commit install")
+        # Install pre-commit hooks
+        # Note: Requires a git repository to be initialized!
+        if is_yes("{{ cookiecutter.create_git }}"):
+            print("Installing pre-commit hooks.")
+            os.system(
+                "conda activate {{ cookiecutter.package_name }} "
+                + "& python -m pre-commit install"
+            )
+        else:
+            print("Cannot install pre-commit hooks; no git repository!")
+            print("Type `pre-commit install` in the package folder to install manually.")
 
     else:
         # Remove pre-commmit config

@@ -13,14 +13,14 @@ EXTRAS_REQUIRE = {
         "isort",
         "black",
         "pylint",
-        "pre-commit",
         "mkdocs",
         "mkdocs-material",
         "mkdocs-gen-files",
         "mkdocs-literate-nav",
         "mkdocs-section-index",
         "mkdocstrings",
-        "mkdocstrings-python",
+        "mkdocstrings-python",{% if cookiecutter.precommit.startswith("y") %}
+        "pre-commit",{% endif %}
     ]
     + TEST_REQUIREMENTS,
 }

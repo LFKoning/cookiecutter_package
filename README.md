@@ -57,14 +57,14 @@ brackets (`[..]`). Simply press `Enter` to accept the default value and continue
 
 After filling in all the fields, you should see a new folder with your package's name in
 the current folder. If you navigate to the package folder, you will see a skeleton with
-the default file layout to create a simple Python package.
+the default file layout to create a Python package.
 
 Depending on the final three choices, cookiecutter will also have:
 
 1. Initialized a local git repository.
 2. Set the git remote to the correct Azure DevOps repository.
 3. Created a new Anaconda environment with the name of your package.
-4. Installed development packages; isort, black, pylint, pre-commit.
+4. Installed (editable) your package including development dependencies.
 5. Installed pre-commit hooks for isort, black, pylint, et cetera.
 
 So you should be all good to go; good luck!
@@ -72,10 +72,10 @@ So you should be all good to go; good luck!
 If you chose to skip any of the above steps, you should perform them manually from a
 (Anaconda) command prompt in the package folder:
 
-1. Initialize a new git repository: `git init`
+1. Initialize a new git repository: `git init -b main`
 2. Set git remote: `git remote add origin <Azure Repository URL>`
 3. Create Anaconda environment: `conda create -n <package name> python=<python version>`
-4. Install development packages: `conda install isort black pylint pre-commit`
+4. Install your package: `python -m pip install -e . [dev]`
 5. Install pre-commit hooks: `pre-commit install`
 
 Performing these actions manually should have the same result as using the cookiecutter
